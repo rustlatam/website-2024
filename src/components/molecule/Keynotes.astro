@@ -1,0 +1,44 @@
+---
+interface Props {
+	name: string;
+    image: string;
+    description: string;
+}
+
+const { name, image, description } = Astro.props;
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+
+library.add(faChevronDown);
+
+const arrowDown = icon({ prefix: "fas", iconName: faChevronDown.iconName }, {classes: "w-[1em] h-[1em] text-4xl text-white fill-current opacity-75 w-4 h-4 -mr-1"});
+
+---
+
+<!-- bodil -->
+<div class="brand_item text-center col-md-6 mx-auto">
+    <header class="flex flex-col gap-5">
+      <img src={image} alt={image} class="mx-auto rounded-lg shadow-black drop-shadow-md" />
+      <h3 class="font-montserrat uppercase text-3xl font-bold">{name}</h3>
+    </header>
+
+    <div>
+      <p class="abstract">Keynote abstract se anunciará pronto</p>
+    </div>
+    
+    <details class="question py-4 border-b border-grey-lighter">
+
+        <summary class="flex items-center font-bold">
+            <p class="w-full">Un poco sobre {name}</p>
+          <button class="ml-auto">
+        <Fragment set:html={arrowDown.html} />
+        </button>
+        </summary>
+
+        <div class="mt-4 leading-normal text-md  lg:max-w-xl">
+            <p class=" lg:max-w-xl">{description}</p>
+        </div>
+    </details>
+
+  </div> <!-- end bodil -->

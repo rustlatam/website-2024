@@ -7,10 +7,14 @@ interface Props {
 import './../../public/assets/css/home.css';
 
 const { title } = Astro.props;
+
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Where Rust meets Latin America" />

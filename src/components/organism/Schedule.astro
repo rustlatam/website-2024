@@ -1,4 +1,10 @@
 ---
+import Keynotes from "../molecule/Keynotes.astro";
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 ---
 
@@ -16,62 +22,13 @@
     <div class="sub-content-section">
   
   
-        <div class="sponsor-head">Conference Keynotes</div>
+        <div class="uppercase font-bold font-montserrat text-6xl my-10">Conference Keynotes</div>
   
         <!-- KEYNOTES -->
-        <div class="brand_carousel row">
+          <div class="grid grid-cols-2 gap-6 items-start xl:max-w-5xl mx-auto">
           <!-- bodil -->
-          <div class="brand_item text-center col-md-6">
-            <header>
-              <img src="{{ site.baseurl }}/img/bodil.jpg" alt="bodil" />
-              <h3>Bodil Stokke</h3>
-            </header>
-  
-            <div>
-              <p class="abstract">Keynote abstract se anunciará pronto</p>
-              <p class="abstract">Keynote abstract to be announced</p>
-            </div>
-  
-            <button type="button" class="collapsible">Un poco sobre Bodil</button>
-            <div class="content">
-              <p class="abstract">
-                Bodil es una oradora compulsiva en los campos de programación funcional, tecnologías web y perros espaciales soviéticos, ayuda a organizar múltiples conferencias de desarrolladores en el Reino Unido y Escandinavia. Ha estado en todas partes, desde JavaScript hasta Haskell, y recientemente ha estado pasando tiempo de calidad con Rust. La mayoría de las veces ella ni siquiera se molesta porque todavía no tiene Higher Kinded Types.</p>
-            </div>
-  
-            <button type="button" class="collapsible">A bit about Bodil</button>
-            <div class="content">
-              <p class="abstract">Bodil is a compulsive conference speaker in the fields of functional programming, web technologies and Soviet space dogs, and helps organise multiple developer conferences in the UK and Scandinavia. She’s been everywhere from JavaScript to Haskell and has recently been spending quality time with Rust. Most of the time she’s not even upset that it doesn’t have higher kinded types yet.</p>
-            </div>
-  
-          </div> <!-- end bodil -->
-  
-          <!-- federico -->
-          <div class="brand_item text-center col-md-6">
-            <header>
-              <img src="{{ site.baseurl }}/img/federico.jpg" alt="federico" />
-              <h3>Federico Mena Quintero</h3>
-            </header>
-  
-            <div>
-              <p class="abstract">Esta charla va a ser un sabroso revoltijo de varias cosas, digamos, una Rapsodia Rustácea. El software que no pasa de moda: aplicaciones de hace 20 años, sistema operativo de hace 30, lenguajes de hace 40. El meme de Reescríbelo En Rust. ¿Dónde está Latinoamérica en todo esto? Colonialismo tecnológico y descolonización. Qué hacemos con esa montaña de software incomprensible. Perspectivas de un cuarentón para la gente de 20. Una anécdota o dos o siete. Por qué Rust es diferente. Esta charla es en español.</p>
-            </div>
-  
-            <div>
-              <p class="abstract">This talk is going to be a tasty mix of several things, say, a Rustacean Rhapsody. Software that is not a passing fad: applications from 20 years ago, operating systems from 30 years ago, languages from 40 years ago. The Rewrite It In Rust meme. Where is Latin America in all of this? Technological colonialism and decolonization. What to do with that mountain of incomprehensible software. Perspectives from a guy in his forties for people in their 20s. An anecdote or two or seven. Why Rust is different. This talk is in Spanish.</p>
-            </div>
-  
-            <button type="button" class="collapsible">Un poco sobre Federico</button>
-            <div class="content">
-              <p class="abstract">Federico Mena Quintero es uno de los fundadores del proyecto GNOME, un entorno gráfico muy utilizado en sistemas operativos libres. Antes dex GNOME, Federico fue el encargado del GIMP por algún tiempo. En los primeros días de GNOME, fue responsable de parte del código y documentación originales de las bibliotecas del ambiente gráfico, juegos y aplicaciones. Trabajó en Red Hat Advanced Development Labs en las primeras versiones del escritorio, y luego en Ximian en el calendario de Evolution. Después de trabajar en Evolution, Federico se especializó en el núcleo del escritorio: la biblioteca GTK, las bibliotecas de la plataforma GNOME y el manejador de archivos Nautilus. Hoy en día trabaja en Suse, en las distribuciones openSUSE y SUSE Linux Enterprise Desktop; desde ahí también mantiene librsvg y otras bibliotecas.</p>
-            </div>
-  
-            <button type="button" class="collapsible">A bit about Federico</button>
-            <div class="content">
-              <p class="abstract">Federico Mena Quintero is one of the founders of the GNOME project, a widely used graphical environment for free operating systems. Before GNOME, Federico was the maintainer of the GIMP for some time. In the first days of GNOME, he was responsible for part of the code and documentation for the early libraries of the desktop, games, and applications. He worked at Red Hat Advanced Development Labs on the first versions of the desktop, and then at Ximian on Evolution's calendar application. After working on Evolution, Federico specialized in the core desktop: the GTK libraries, GNOME's platform libraries, and the file manager Nautilus. Currently he works at SUSE, on openSUSE distribution and SUSE Linux Enterprise Desktop; from there he maintains librsvg and other libraries.</p>
-            </div>
-  
-          </div><!-- end federico -->
-  
+          <Keynotes name="Bodil Stokke" image="assets/img/people/bodil.jpg" description={t('keynote.bodil.abstract')} />
+          <Keynotes name="Bodil Stokke" image="assets/img/people/federico.jpg" description={t('keynote.fede.abstract')} />
         </div><!-- END KEYNOTES -->
   
     </div> <!-- end sub-content-section -->

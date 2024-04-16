@@ -1,0 +1,39 @@
+---
+import SectionSeparator from '../../components/atom/SectionSeparator.astro';
+import Hero from '../../components/organism/Hero.astro';
+import About from '../../components/organism/About.astro';
+import Location from '../../components/organism/Location.astro';
+import Layout from '../../layouts/Layout.astro';
+import Tickets from '../../components/organism/Tickets.astro';
+import Sponsors from '../../components/organism/Sponsors.astro';
+import Schedule from '../../components/organism/Schedule.astro';
+import Workshops from '../../components/organism/Workshops.astro';
+
+export function getStaticPaths () {
+ return [
+    {params: {lang: 'en'}},
+    {params: {lang: 'es'}},
+  ];
+}
+
+const { lang } = Astro.params;
+---
+
+
+<Layout title="Rust Latam">
+	<main class="bg-[#273b91]">
+		<Hero />
+		<SectionSeparator />
+		<About></About>
+		<SectionSeparator />
+		<Location />
+		<SectionSeparator />
+		<Tickets />
+		<SectionSeparator />
+		<Sponsors />
+		<SectionSeparator />
+		<Schedule/>
+		<SectionSeparator />
+		<Workshops/>
+	</main>
+</Layout>
