@@ -1,0 +1,37 @@
+---
+import SponsorItem from "../molecule/SponsorItem.astro";
+
+//TODO: Refactorize, separate components
+
+---
+<!-- Sponsor Section -->
+<section id="our_sponsors" class="mx-auto container bg-[#273b91] text-center text-white py-40">
+      <div class="container">
+        <div class="lg:max-w-3xl mx-auto text-xl gap-4 flex flex-col">
+          <h2 class="uppercase font-bold font-montserrat text-4xl mb-4">Our Sponsors</h2>
+          <p class="text-2xl">Rust Latam 2020 is also made possible by our generous sponsors</p>
+          <p class="text-2xl">For sponsorship inquiries, <a href="/sponsors">check the available packages</a> and feel free to <a href="mailto:sponsors@rustlatam.org">drop us an email</a>: we will work out the details together!</p>
+        </div>
+        <div class="lg:max-w-4xl mx-auto text-xl gap-4 flex flex-col">
+            <div class="text-[#ffd700] mt-14 mb-20 text-4xl font-bold sponsor-head gold">GOLD</div>
+          <div class="brand_carousel row">
+            <SponsorItem name="Holochain" link="https://holo.host" image="assets/img/brands/holochain.png" description="Holo is a cloud hosting market for distributed applications. Holochain is a new open source framework for truly peer-to-peer applications. Holo acts as a bridge between Holochain apps and users by creating an ecosystem that enables distributed hosting services provided by peers." />
+          </div> <!-- end of gold sponsors -->
+  
+          <div class="silver text-[#c0c0c0] mt-14 mb-20 text-4xl font-bold">SILVER</div>
+          <div class="grid grid-cols-2 gap-6 items-start">
+            <SponsorItem name="Mozilla" link="https://www.mozilla.org" image="assets/img/brands/mozilla.png" description=`Best known for its Firefox web browser, the organization prides itself on its efforts to keep the internet "open and accessible to all." It's positioned Firefox as a privacy-focused alternative to Big Tech browsers. In recent years, Mozilla has also worked on efforts to crowdsource an open and diverse dataset for training voice recognition systems. In 2018, it also launched tools to protect users from tracking code as they navigate the web, including software to cordon off Facebook from other browser activity.` />
+            <SponsorItem name="Parity" link="https://www.parity.io" image="assets/img/brands/parity.png" description=`Building the blockchain infrastructure for the decentralised web.` />
+          </div>
+          <!-- end of silver sponsors -->
+  
+          <div class="sponsor-head bronze text-[#ff8c00] mt-14 mb-20 text-4xl font-bold">BRONZE</div>
+          <div class="grid grid-cols-2 gap-6 items-start">
+                <SponsorItem name="Embark" link="https://www.embark.dev" image="assets/img/brands/embark.png" description=`Embark Studios is a Stockholm-based games studio, on a mission to blur the line between playing and making with games and tools that empower everyone to create.` />
+                <SponsorItem name="Integer32" link="https://integer32.com" image="assets/img/brands/integer32-white.png" description=`Integer 32 is a consultancy that delivers high-quality Rust code. We can help you evaluate Rust for your problem, build a Rust MVP, and get your developers up to speed on Rust.` />
+          </div>
+          <!-- end of bronze sponsors -->
+  
+        </div>
+      </div>
+  </section>

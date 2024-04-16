@@ -3,3 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
+a {
+    color: #079bc7;
+}

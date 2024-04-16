@@ -4,6 +4,9 @@ import Hero from '../components/organism/Hero.astro';
 import About from '../components/organism/About.astro';
 import Location from '../components/organism/Location.astro';
 import Layout from '../layouts/Layout.astro';
+import Tickets from '../components/organism/Tickets.astro';
+import Sponsors from '../components/organism/Sponsors.astro';
+import Schedule from '../components/organism/Schedule.astro';
 ---
 
 <Layout title="Rust Latam">
@@ -13,5 +16,11 @@ import Layout from '../layouts/Layout.astro';
 		<About></About>
 		<SectionSeparator />
 		<Location />
+		<SectionSeparator />
+		<Tickets />
+		<SectionSeparator />
+		<Sponsors />
+		<SectionSeparator />
+		<Schedule/>
 	</main>
 </Layout>
