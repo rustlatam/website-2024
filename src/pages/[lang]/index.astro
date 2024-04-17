@@ -8,6 +8,9 @@ import Tickets from '../../components/organism/Tickets.astro';
 import Sponsors from '../../components/organism/Sponsors.astro';
 import Schedule from '../../components/organism/Schedule.astro';
 import Workshops from '../../components/organism/Workshops.astro';
+import Contact from '../../components/organism/Contact.astro';
+import COC from '../../components/organism/COC.astro';
+
 
 export function getStaticPaths () {
  return [
@@ -35,5 +38,9 @@ const { lang } = Astro.params;
 		<Schedule/>
 		<SectionSeparator />
 		<Workshops/>
+		<SectionSeparator />
+		<Contact />
+		<SectionSeparator />
+		<COC />
 	</main>
 </Layout>
