@@ -9,7 +9,7 @@ export default {
 				montserrat: 'Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif'
 			}),
 			backgroundImage: (theme) => ({
-				hero: "url('./assets/img/intro-bg-2024.png')",
+				hero: "url('/assets/img/intro-bg-2024.png')",
 			}),
 			textShadow: {
 				hero: '8px 6px 0px',
