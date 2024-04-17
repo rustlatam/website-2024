@@ -1,0 +1,58 @@
+---
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { faGitlab, faTwitter, faDiscord } from "@fortawesome/free-brands-svg-icons"
+
+
+library.add(faEnvelope);
+library.add(faTwitter);
+library.add(faDiscord);
+library.add(faGitlab);
+
+const discordIcon = icon({ prefix: "fab", iconName: faDiscord.iconName }, {classes: "w-[1em] h-[1em] text-2xl text-[#079bc7] mr-2"});
+const twitterIcon = icon({ prefix: "fab", iconName: faTwitter.iconName }, {classes: "w-[1em] h-[1em] text-2xl text-[#079bc7] mr-2"});
+const gitlabIcon = icon({ prefix: "fab", iconName: faGitlab.iconName }, {classes: "w-[1em] h-[1em] text-2xl text-[#079bc7] mr-2"});
+const mailIcon = icon({ prefix: "fas", iconName: faEnvelope.iconName }, {classes: "w-[1em] h-[1em] text-2xl text-[#079bc7] mr-2"});
+
+---
+
+<!-- Contact Section -->
+<section id="contact" class="mx-auto bg-[#273b91] text-center text-white py-40">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2 class="uppercase font-bold font-montserrat text-3xl mb-10">Contact</h2>
+        <p class="text-xl">For any question or doubt don't hesitate to contact us</p>
+  
+        <ul class="text-xl flex gap-10 items-center w-full mx-auto justify-center my-10">
+          <li>
+            <a href="mailto:team@rustlatam.org" class="text-xl border-[#079bc7] border rounded flex p-3 gap-2 items-center justify-center">
+                
+        <Fragment set:html={mailIcon.html} />
+                
+                <span class="network-name">EMAIL</span></a>
+          </li>
+  
+          <li>
+            <a href="https://twitter.com/RustLatamConf" class="text-xl border-[#079bc7] border rounded flex p-3 gap-2 items-center justify-center uppercase">
+        <Fragment set:html={twitterIcon.html} />
+                
+                <span class="network-name">twitter</span></a>
+          </li>
+  
+          <li>
+            <a href="https://gitlab.com/rustlatam/website-2020" class="text-xl border-[#079bc7] border rounded flex p-3 gap-2 items-center justify-center uppercase">
+        <Fragment set:html={gitlabIcon.html} />
+                
+                <span class="network-name">gitlab</span></a>
+          </li>
+  
+          <li>
+            <a href="https://discord.gg/rust-latam" class="text-xl border-[#079bc7] border rounded flex p-3 gap-2 items-center justify-center uppercase">
+        <Fragment set:html={discordIcon.html} />
+                <span class="network-name">discord</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>

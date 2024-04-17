@@ -1,0 +1,15 @@
+---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!-- Tickets Section -->
+<section id="tickets" class="container mx-auto bg-[#273b91] text-center text-white py-40">
+    <div class="lg:max-w-3xl mx-auto text-xl gap-6 flex flex-col">
+        <h2 class="uppercase font-bold font-montserrat text-4xl mb-4">Tickets</h2>
+        <p class="text-xl">{t('tickets.first-paragraph')}</p>
+        <p class="text-xl">{t('tickets.second-paragraph')}</p>
+    </div>
+</section>

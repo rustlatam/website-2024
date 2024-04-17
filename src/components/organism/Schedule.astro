@@ -1,0 +1,34 @@
+---
+import Keynotes from "../molecule/Keynotes.astro";
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+
+<!-- Schedule Section -->
+<section id="schedule" class="mx-auto container bg-[#273b91] text-center text-white py-40">
+    <div class="schedule-section">
+      <div class="container">
+        <div class="lg:max-w-5xl mx-auto text-xl gap-6 flex flex-col">
+          <h2 class="uppercase font-bold font-montserrat text-5xl mb-20">Schedule</h2>
+          <p class="text-2xl">The official Call for Proposals has opened, submit yours at<br/><a href="https://cfp.rustlatam.org">https://cfp.rustlatam.org</a></p>
+          <p class="text-2xl"><strong>UPDATE</strong>: the Call for Proposals has closed, thanks for all the submissions! The team of judges is at work on selecting the talks and workshops that will make it to Latam 2020.
+        </div>
+      </div>
+    </div>
+    <div class="sub-content-section">
+  
+  
+        <div class="uppercase font-bold font-montserrat text-6xl my-10">Conference Keynotes</div>
+  
+        <!-- KEYNOTES -->
+          <div class="grid grid-cols-2 gap-6 items-start xl:max-w-5xl mx-auto">
+          <!-- bodil -->
+          <Keynotes name="Bodil Stokke" image="/assets/img/people/bodil.jpg" description={t('keynote.bodil.abstract')} />
+          <Keynotes name="Bodil Stokke" image="/assets/img/people/federico.jpg" description={t('keynote.fede.abstract')} />
+        </div><!-- END KEYNOTES -->
+  
+    </div> <!-- end sub-content-section -->

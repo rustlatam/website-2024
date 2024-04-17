@@ -1,0 +1,30 @@
+---
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
+
+library.add(faArrowDown);
+
+const arrowDown = icon({ prefix: "fas", iconName: faArrowDown.iconName }, {classes: "w-[1em] h-[1em] text-4xl text-white"});
+
+---
+
+<header class="h-screen w-full bg-hero bg-no-repeat bg-center bg-scroll bg-cover">
+    <div class="h-full w-full place-content-center grid bg-[#3455da69]">
+      <div class="flex flex-col gap-20">
+        <h1 class="uppercase font-montserrat text-shadow-hero shadow-[#273b91] text-white font-bold text-8xl mt-40">Rust Latam 2024</h1>
+        <p class="text-shadow-hero shadow-[#273b91] text-white text-4xl text-center mb-20">{t('hero.slogan')}</p>
+        <div class="w-20 h-20 rounded-full border-white border-4 flex items-center justify-center mx-auto">
+          <a href="index.html#cancel" class="">
+            <Fragment set:html={arrowDown.html} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>

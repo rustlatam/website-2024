@@ -1,0 +1,39 @@
+---
+import Navbar from '../components/organism/Navbar.astro';
+interface Props {
+	title: string;
+}
+
+import './../../public/assets/css/home.css';
+
+const { title } = Astro.props;
+
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Rust Latam Conference is Latin America's leading event for and by the Rust movement, and one of Rust local community's largest annual networking opportunities." />
+		<meta name="keywords" content="Rust, Rust Programming Language , Latam, Latinamerica, Latino america, America Latina, conferencia, conference, Tech event" />
+		<meta name="author" content="Rust Latam Team" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+
+		<link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<Navbar />
+		<slot />
+		<!-- <footer>
+			<p>info@rustlatam.org</p>
+		</footer> -->
+	</body>
+</html>
